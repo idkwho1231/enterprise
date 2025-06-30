@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <div class="dashboard-intro-paragraph">
+        <h2 class="dashboard-intro-header">Dashboard Findings</h2>
+        Here you can explore the data and insights about physical activity among young people. The graphs below illustrate trends, comparisons, and key findings from the collected data, helping to highlight important patterns and areas for improvement.
+    </div>
+    <div class="dashboard-highlights">
+        <strong>Page Highlights</strong><br>
+        <span style="font-weight:600;">Do young people meet the physical activity guidelines?</span><br>
+        The Australian physical activity guidelines recommend that adolescents aged 13–17 engage in at least 60 minutes of moderate to vigorous physical activity every day and limit sedentary behaviour, particularly screen-based activity.
+        <br><br>
+        <span style="font-weight:600;">What does the data show?</span><br>
+        The data collected across 80 entries reveals that most users are not meeting these guidelines.
+        <ul style="margin-top: 0.7em; margin-bottom: 0.7em;">
+            <li>🔴 Only a small portion of students achieved the recommended 60 minutes of activity per day across multiple days.</li>
+            <li>🟠 Sedentary time, especially screen time, consistently outweighed physical activity, with many students showing low activity-to-sedentary ratios (e.g., 1:4).</li>
+            <li>🟡 Most physical activity recorded was light or moderate, with vigorous intensity being the least common.</li>
+            <li>🔵 Students were most active on weekends, highlighting a drop in movement during structured school weeks.</li>
+            <li>🟢 Screen time often represented more than 50% of daily sedentary behaviour, pointing to digital distractions as a major barrier to physical health.</li>
+        </ul>
+        <span style="font-weight:600;">Conclusion:</span><br>
+        Overall, the data clearly supports the project's core concern: young people are not moving enough, and digital distractions like screens are contributing heavily to sedentary lifestyles. These insights provide a strong foundation for raising awareness and encouraging more balanced, active routines.
+    </div>
+    <div class="dashboard-card">
+        <div class="dashboard-card-title">
+            Figure 1: Participation in physical activity in the last 1.5 months, by total duration among users
+        </div>
+        <div class="dashboard-card-content">
+            <div class="dashboard-card-img">
+                <img src="{{ url_for('static', filename='images/TotalDuration_Graph.png') }}" alt="Graph 1">
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-summary">
+        <div class="dashboard-summary-title">Has physical activity participation changed across time?</div>
+        <div class="dashboard-summary-text">
+            There is a significant gap between actual activity levels and the recommended standard. None of the users met the guideline of 60 minutes per day (2,700 minutes over 1.5 months). The most active user reached just over 22% of the target. This trend reflects a broader issue within youth behaviour, suggesting that physical inactivity is a widespread concern, and interventions or increased awareness may be necessary to promote healthier, more active lifestyles.
+        </div>
+        <ul class="dashboard-summary-points" style="margin-bottom:0.7em; margin-top:0.7em; padding-left:1.5em; font-size:1.13em; line-height:1.7;">
+            <li>None of the users met the guideline of 2,700 minutes over 1.5 months.</li>
+            <li>The most active user reached just over 22% of the target.</li>
+            <li>Most users recorded less than 400 minutes of activity.</li>
+        </ul>
+    </div>
+    <div class="dashboard-card">
+        <div class="dashboard-card-title">
+            Figure 2: Participation in physical activity in the last 1.5 months, by active days among users
+        </div>
+        <div class="dashboard-card-content">
+            <div class="dashboard-card-img">
+                <img src="{{ url_for('static', filename='images/TotalActiveDays_Graph2.png') }}" alt="Graph 2">
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-summary">
+        <div class="dashboard-summary-title">Are young people meeting the recommended active days?</div>
+        <div class="dashboard-summary-text">
+            The data shows a striking contrast, no student reached even 15% of the recommended total active days. The most active user recorded just 6 active days, while several users logged only 1 day each. This demonstrates a significant shortfall in consistent physical activity, reinforcing the concern that most students are not meeting the basic daily movement requirements. The data highlights the need for increased awareness, motivation, and opportunities to help young people integrate more activity into their daily lives.
+        </div>
+        <ul class="dashboard-summary-points" style="margin-bottom:0.7em; margin-top:0.7em; padding-left:1.5em; font-size:1.13em; line-height:1.7;">
+            <li>No student reached even 15% of the recommended active days.</li>
+            <li>The highest was 6 active days out of a possible 45.</li>
+            <li>Many students had only 1 or 2 active days.</li>
+        </ul>
+    </div>
+    <div class="dashboard-card">
+        <div class="dashboard-card-title">
+            Figure 3: Intensity of physical activity in the last 1.5 months among users
+        </div>
+        <div class="dashboard-card-content">
+            <div class="dashboard-card-img">
+                <img src="{{ url_for('static', filename='images/PercentIntensties_Graph3.png') }}" alt="Graph 3">
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-summary">
+        <div class="dashboard-summary-title">Are young people engaging in physical activity at the recommended intensity?</div>
+        <div class="dashboard-summary-text">
+            While students are engaging in physical activity, most are not meeting the recommended intensity levels. Only a few users reach close to the suggested amount of vigorous activity (3 days/week). The majority rely on light or moderate intensity, highlighting a need for more high-effort movement to meet health guidelines. According to physical activity guidelines for adolescents, young people should engage in at least 60 minutes of moderate to vigorous physical activity daily, with vigorous intensity recommended on at least 3 days per week.
+        </div>
+        <ul class="dashboard-summary-points" style="margin-bottom:0.7em; margin-top:0.7em; padding-left:1.5em; font-size:1.13em; line-height:1.7;">
+            <li>Vigorous activity is rare among students.</li>
+            <li>Most activity is light or moderate intensity.</li>
+            <li>Few users approach the guideline of 3 days/week vigorous activity.</li>
+        </ul>
+    </div>
+    <div class="dashboard-card">
+        <div class="dashboard-card-title">
+            Figure 4: Active to Sedentary ratios in the last 1.5 months among users
+        </div>
+        <div class="dashboard-card-content">
+            <div class="dashboard-card-img">
+                <img src="{{ url_for('static', filename='images/activetosedentaryratio_Graph4.png') }}" alt="Graph 4">
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-summary">
+        <div class="dashboard-summary-title">Are young people balancing their active and sedentary time effectively?</div>
+        <div class="dashboard-summary-text">
+            The Active/Sedentary Ratios chart reveals that most students spend significantly more time being sedentary than active, with no ratio exceeding 0.25. This means that even the most active student is sedentary for four times longer than they are active. According to national guidelines, young people should be active for at least 60 minutes daily and limit screen time to 2 hours. These low ratios indicate that the majority of students are not meeting these recommendations, highlighting a broader issue of insufficient physical activity in youth.
+        </div>
+        <ul class="dashboard-summary-points" style="margin-bottom:0.7em; margin-top:0.7em; padding-left:1.5em; font-size:1.13em; line-height:1.7;">
+            <li>No student had an active/sedentary ratio above 0.25.</li>
+            <li>Students are sedentary at least 4 times longer than active.</li>
+            <li>Most are not meeting national recommendations for activity vs. screen time.</li>
+        </ul>
+    </div>
+    <div class="dashboard-card">
+        <div class="dashboard-card-title">
+            Figure 5: Daily screen time in the last 1.5 months among users
+        </div>
+        <div class="dashboard-card-content">
+            <div class="dashboard-card-img">
+                <img src="{{ url_for('static', filename='images/screentime_Graph5.png') }}" alt="Graph 5">
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-summary">
+        <div class="dashboard-summary-title">Are young people limiting their screen time as recommended?</div>
+        <div class="dashboard-summary-text">
+            The graph shows that average daily screen time ranges from about 190 to 210 minutes, which exceeds the Australian guideline of no more than 120 minutes of recreational screen time per day for young people aged 5–17. Screen time is highest on Saturdays, but it remains above the recommended limit on all days. This suggests that screen use may need to be reduced by 1–1.5 hours daily to align with health guidelines and support the wellbeing of young people. High screen time can also reduce the time available for physical activity, which is important for healthy growth and development, and can lead to a lack of motivation in young people.
+        </div>
+        <ul class="dashboard-summary-points" style="margin-bottom:0.7em; margin-top:0.7em; padding-left:1.5em; font-size:1.13em; line-height:1.7;">
+            <li>Average daily screen time is 190–210 minutes.</li>
+            <li>All students exceed the 120-minute guideline.</li>
+            <li>Screen time is highest on Saturdays.</li>
+        </ul>
+    </div>
+    <div class="dashboard-card">
+        <div class="dashboard-card-title">
+            Figure 6: Comparison of total screen time and physical activity duration in the last 1.5 months among users
+        </div>
+        <div class="dashboard-card-content">
+            <div class="dashboard-card-img">
+                <img src="{{ url_for('static', filename='images/durationscreentime_graph6.png') }}" alt="Graph 6">
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-summary">
+        <div class="dashboard-summary-title">Is there an imbalance between screen time and physical activity?</div>
+        <div class="dashboard-summary-text">
+            The graph shows that for each student, total screen time is significantly higher than their total physical activity duration. For example, Mia and Jack have screen times reaching around 2500 and 2300 minutes, while their physical activity duration remains below 600 minutes. All students have consistently higher screen time compared to their activity levels, indicating that screen use is taking up a large portion of their weekly time. This level of screen time exceeds the Australian guideline of no more than 120 minutes of recreational screen time per day for young people aged 5–17, highlighting a need to reduce screen time to support a balanced lifestyle. High screen time can reduce opportunities for physical activity, which is important for healthy growth, fitness, and mental wellbeing, and can also lead to a lack of motivation and reduced energy levels in young people.
+        </div>
+        <ul class="dashboard-summary-points" style="margin-bottom:0.7em; margin-top:0.7em; padding-left:1.5em; font-size:1.13em; line-height:1.7;">
+            <li>Screen time is much higher than physical activity for all students.</li>
+            <li>Some students have over 2,500 minutes of screen time in 1.5 months.</li>
+            <li>Physical activity duration remains below 600 minutes for everyone.</li>
+        </ul>
+    </div>
+
+    <div class="dashboard-final-summary" style="margin:2.5em 0 2em 36px; max-width:900px; background:#f3f8fd; border-left:6px solid #1976d2; padding:1.5em 2em;">
+        <h3 style="color:#174ea6; font-size:1.35em; font-weight:700; margin-bottom:0.7em;">Final Summary</h3>
+        <p style="font-size:1.13em; line-height:1.7; margin-bottom:0;">
+            The collected data highlights a clear and concerning trend: most young people are not meeting recommended physical activity guidelines and are spending excessive time being sedentary, especially on screens. Very few students achieve the daily or weekly targets for activity duration, intensity, or active days. Screen time consistently exceeds healthy limits, and sedentary behaviour dominates daily routines. These findings reinforce the urgent need for increased awareness, targeted interventions, and supportive environments to help young people move more, sit less, and develop lifelong healthy habits.
+        </p>
+    </div>
+{% endblock %}

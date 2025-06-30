@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Exercise Survey{% endblock %}
+{% block content %}
+<div style="max-width: 500px; margin: 48px auto; font-family: Arial, sans-serif;">
+    <h1 style="font-size:2em; color:#174ea6; font-weight:700; margin-bottom:1em;">Exercise Survey</h1>
+    <form id="exercise-form" style="margin-bottom:1.5em;">
+        <label for="hours" style="font-size:1.15em;">How many hours do you exercise a week?</label><br>
+        <input type="number" id="hours" name="hours" min="0" step="0.1" required style="margin-top:0.7em; padding:0.4em; font-size:1em; width: 120px;">
+        <button type="submit" style="margin-left:1em; padding:0.4em 1.2em; font-size:1em; background:#1976d2; color:#fff; border:none; border-radius:3px; cursor:pointer;">Submit</button>
+    </form>
+    <div id="result" style="font-size:1.15em; font-weight:600; color:#174ea6; margin-top:1em;"></div>
+</div>
+<!-- Guidelines Table -->
+<div style="max-width:900px; margin:40px auto; font-family:Arial,sans-serif;">
+    <h2 style="color:#174ea6; font-size:1.3em; font-weight:700; margin-bottom:1em;">Behaviour Guidelines Comparison</h2>
+    <table style="width:100%; border-collapse:collapse; background:#fff;">
+        <thead>
+            <tr style="background:#f3f3f3;">
+                <th style="border:1px solid #ccc; padding:10px; text-align:left;">Behaviour guideline</th>
+                <th style="border:1px solid #ccc; padding:10px; text-align:left;">15–17 year olds</th>
+                <th style="border:1px solid #ccc; padding:10px; text-align:left;">18–24 year olds</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px; font-weight:600;">Physical activity</td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Accumulate at least 60 minutes of moderate to vigorous activity per day, involving mainly aerobic activities at least 3 days per week<br>
+                    Several hours of light physical activities<br>
+                    Incorporate vigorous activities at least 3 days per week
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Accumulate 150 to 300 minutes of moderate intensity physical activity or 75 to 150 minutes of vigorous intensity physical activity, or an equivalent combination of both moderate and vigorous activities each week<br>
+                    Be active on most, preferably all, days every week
+                </td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px; font-weight:600;">Sedentary or recreational screen-based activity</td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    No more than 120 minutes of recreational screen use per day<br>
+                    Break up long periods of sitting as often as possible
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Minimise the amount of time spent in prolonged sitting<br>
+                    Break up long periods of sitting as often as possible
+                </td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px; font-weight:600;">Strength</td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Muscle and bone strengthening activities at least 3 times a week
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Muscle strengthening activities at least 2 days a week
+                </td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px; font-weight:600;">Sleep</td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Uninterrupted 8–10 hours of sleep per night<br>
+                    Consistent bed and wake-up times
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    No specific guidelines
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+document.getElementById('exercise-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var hours = parseFloat(document.getElementById('hours').value);
+    var result = '';
+    if (hours >= 7) {
+        result = "You fulfill the guidelines, keep it up!";
+    } else if (hours >= 5) {
+        result = "You're almost there, not quite though.";
+    } else if (hours <= 3) {
+        result = "Go outside more. Be young. Experience sport.";
+    } else {
+        result = "Keep trying to increase your activity!";
+    }
+    document.getElementById('result').textContent = result;
+});
+</script>
+{% endblock %}

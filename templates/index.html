@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="header-spacer"></div>
+<div class="intro-paragraph">
+  <h2 class="intro-header">Physical Activity of Young People</h2>
+  This system helps inform students, parents, and educators about physical activity, screen time, and wellbeing trends. According to the World Health Organization and national health bodies such as the Australian Department of Health, it is recommended that young people aged 13–17 engage in at least 60 minutes of moderate to vigorous physical activity every day to support healthy growth, development, and mental wellbeing. However, in today’s screen-saturated world, many adolescents are falling short of these guidelines. 
+</div>
+
+<img src="{{ url_for('static', filename='images/factual_image.png') }}" alt="Intro Image" class="intro-image">
+
+<a href="{{ url_for('dashboard') }}" class="dashboard-btn">See our Findings</a>
+
+<div class="health-risk-section">
+  <h3 class="health-risk-header">The Risks of Inactivity</h3>
+  <p>Inactivity from a lack of physical activity has significant negative consequences for health, increasing the risk of various diseases and conditions. These include <b>cardiovascular disease</b>, <b>type 2 diabetes</b>, <b>some cancers</b>, <b>osteoporosis</b>, and mental health issues like <b>depression</b> and <b>anxiety</b>.</p>
+  <div style="text-align:center;">
+    <div style="font-size:1.1em; font-weight:600; color:#000000; margin-bottom:0.5em;">Health Risks Associated with Inactivity</div>
+    <img src="{{ url_for('static', filename='images/health_risk.jpg') }}" alt="Health Risk Image" style="max-width:100%; margin: 1em 0;">
+  </div>
+</div>
+
+
+{% endblock %}
